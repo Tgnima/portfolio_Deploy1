@@ -117,11 +117,70 @@ GitHub Pages est un service d'hébergement gratuit proposé par GitHub qui perme
    git branch -M main
    ```
 
-4. **Pousser votre code vers GitHub**:
+4. **Configurer votre authentification GitHub**:
+
+   > **IMPORTANT**: GitHub n'accepte plus l'authentification par mot de passe pour les opérations Git. Vous devez utiliser un token d'accès personnel ou GitHub CLI.
+
+   **Option A: Utiliser GitHub CLI sur Windows (méthode recommandée)**:
+   
+   1. **Installer GitHub CLI** - Choisissez UNE des méthodes suivantes :
+   
+      - **Méthode 1 : Avec Windows Package Manager (winget)** :
+        - Ouvrez PowerShell ou l'invite de commandes
+        - Exécutez cette commande :
+        ```
+        winget install GitHub.cli
+        ```
+      
+      - **Méthode 2 : Téléchargement direct** :
+        - Téléchargez l'installateur Windows depuis [https://cli.github.com/](https://cli.github.com/)
+        - Exécutez le fichier `.msi` téléchargé
+        - Suivez les instructions de l'assistant d'installation
+   
+   2. **Ouvrez une NOUVELLE fenêtre** PowerShell ou invite de commandes (pour que les changements soient pris en compte)
+   
+   3. **Vérifiez l'installation** :
+      ```
+      gh --version
+      ```
+      Vous devriez voir quelque chose comme `gh version 2.x.x`
+   
+   4. **Authentifiez-vous** :
+      ```
+      gh auth login
+      ```
+   
+   5. **Répondez aux questions** :
+      - À "What account do you want to log into?", sélectionnez `GitHub.com`
+      - À "What is your preferred protocol for Git operations?", sélectionnez `HTTPS`
+      - À "How would you like to authenticate?", sélectionnez `Login with a web browser`
+      - Une page de navigateur s'ouvrira automatiquement, suivez les instructions pour vous connecter
+      - Vous verrez un message comme "Authentication complete" dans le navigateur et "Authentication complete" dans votre terminal
+
+   **Option B: Utiliser un token d'accès personnel**:
+   - Accédez à [https://github.com/settings/tokens](https://github.com/settings/tokens)
+   - Cliquez sur "Generate new token" (classic)
+   - Donnez un nom au token, comme "Portfolio Deployment"
+   - Sélectionnez les autorisations: au minimum `repo` pour un dépôt privé ou public
+   - Copiez le token généré (il ne sera visible qu'une seule fois!)
+   - Configurez Git pour stocker votre token en toute sécurité:
+     ```bash
+     # Pour Windows, utilisez Git Credential Manager (installé avec Git par défaut)
+     git config --global credential.helper manager-core
+     
+     # Pour macOS
+     git config --global credential.helper osxkeychain
+     
+     # Pour Linux
+     git config --global credential.helper cache
+     ```
+
+5. **Pousser votre code vers GitHub**:
    ```bash
    git push -u origin main
    ```
-   ✔️ Vous pourriez être invité à entrer vos identifiants GitHub
+   ✔️ Si vous utilisez un token, vous serez invité à entrer votre nom d'utilisateur GitHub et votre token comme mot de passe
+   ✔️ Si vous utilisez GitHub CLI, l'authentification sera automatique
    ✔️ Vous devriez voir une progression du téléversement et un message de confirmation
 
 ### 7. Configurer GitHub Pages
@@ -182,18 +241,65 @@ Chaque fois que vous apportez des modifications à votre portfolio et que vous s
 
 Si vous rencontrez des problèmes:
 
-1. **Les fichiers ne s'affichent pas correctement**:
-   - Vérifiez que tous les chemins dans votre code sont relatifs (pas de chemins absolus comme `C:\...`)
-   - Assurez-vous que les références aux images et aux fichiers CSS/JS sont correctes
+### 1. Problèmes d'authentification GitHub
 
-2. **Erreur 404 en accédant au site**:
-   - Assurez-vous que vous utilisez la bonne URL
-   - Vérifiez que GitHub Pages est bien activé dans les paramètres
-   - Patientez quelques minutes, le déploiement peut prendre du temps
+- **Erreur "Support for password authentication was removed"** :
+  - C'est normal! GitHub n'accepte plus l'authentification par mot de passe depuis août 2021
+  - Solution: utilisez GitHub CLI (`gh auth login`) ou un token d'accès personnel comme décrit ci-dessus
 
-3. **Problèmes avec git push**:
-   - Vérifiez vos identifiants GitHub
-   - Essayez de générer un token d'accès personnel dans les paramètres GitHub si l'authentification par mot de passe échoue
+- **Problème de stockage des identifiants** :
+  ```bash
+  # Vérifiez votre configuration de credential helper
+  git config --global --list | grep credential
+  
+  # Sur Windows, assurez-vous que Git Credential Manager est installé
+  git credential-manager --version
+  
+  # Réinitialiser votre cache d'identifiants si nécessaire
+  git config --global --unset credential.helper
+  git config --global credential.helper manager-core
+  ```
+
+- **Identifiants refusés avec un token** :
+  - Vérifiez que votre token a les bonnes autorisations (au moins `repo`)
+  - Assurez-vous de copier-coller le token complet sans espaces supplémentaires
+  - Créez un nouveau token si nécessaire, l'ancien pourrait être expiré
+
+### 2. Problèmes d'affichage du site
+
+- **Les fichiers ne s'affichent pas correctement** :
+  - Vérifiez que tous les chemins dans votre code sont relatifs (pas de chemins absolus comme `C:\...`)
+  - Assurez-vous que les références aux images et aux fichiers CSS/JS sont correctes
+  - Examinez le code HTML avec les outils de développeur de votre navigateur (F12) pour trouver les erreurs 404
+
+- **Erreur 404 en accédant au site** :
+  - Assurez-vous que vous utilisez la bonne URL (vérifiez dans les paramètres GitHub Pages)
+  - Vérifiez que GitHub Pages est bien activé dans les paramètres
+  - Patientez jusqu'à 10-15 minutes, le déploiement peut prendre du temps
+  - Vérifiez que votre fichier d'index s'appelle bien `index.html` (sensible à la casse)
+
+### 3. Problèmes avec les commits et push
+
+- **Erreur "Failed to push some refs"** :
+  ```bash
+  # Essayez de synchroniser d'abord avec le dépôt distant
+  git pull --rebase origin main
+  git push origin main
+  ```
+
+- **Changements non pris en compte** :
+  ```bash
+  # Vérifiez l'état de vos fichiers
+  git status
+  
+  # Assurez-vous que tous les fichiers sont bien ajoutés
+  git add .
+  git status  # Vérifiez encore
+  
+  # Committer et pousser
+  git commit -m "Votre message de commit"
+  git push
+  ```
 
 ## Pour aller plus loin
 
