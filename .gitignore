@@ -1,0 +1,21 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers d'éditeurs de code
+.vscode/
+.idea/
+*.sublime-*
+
+# Fichiers de sauvegarde
+*_backup.html
+*_new.html
+*~
+*.bak
+
+# Fichiers de logs
+*.log
+
+# Dépendances Node.js (si vous décidez d'ajouter des packages npm plus tard)
+node_modules/
+package-lock.json

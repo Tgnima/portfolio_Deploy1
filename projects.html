@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projets data, visualisation, ML et automatisation - Portfolio de Tarzs GNIMAGNON">
+    <title>Projets - Portfolio Data</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html">Portfolio Data</a>
+                    <span class="subtitle">Projets & Réalisations</span>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li class="has-submenu">
+                            <a href="projects.html" class="nav-link active">Projets</a>
+                            <ul class="submenu">
+                                <li><a href="dataviz.html">Data Viz</a></li>
+                                <li><a href="ml.html">AI & ML</a></li>
+                                <li><a href="automation.html">Automatisation</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="about.html" class="nav-link">À propos de nous</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section Projects -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Découvrez nos <span>projets</span> data</h1>
+                <p class="hero-subtitle">Une sélection de réalisations en data science, visualisation et automatisation</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Tous les projets</h2>
+            <p class="section-description">Explorez notre portfolio complet de projets data, classés par catégorie</p>
+            
+            <!-- Filtres -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="dataviz">Data Visualization</button>
+                <button class="filter-btn" data-filter="ml">Machine Learning & IA</button>
+                <button class="filter-btn" data-filter="automation">Automatisation</button>
+            </div>
+            
+            <!-- Grille de projets -->
+            <div class="projects-grid">
+                <!-- Projet Data Viz 1 -->
+                <div class="project-card" data-category="dataviz">
+                    <div class="project-image" style="background-image: url('assets/img/project-dataviz-1.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Data Visualization</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Dashboard interactif de ventes</h3>
+                        <p>Visualisation interactive des données de vente sur 5 ans avec filtres dynamiques.</p>
+                        <div class="project-tags">
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Power BI</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                        <a href="#" class="btn btn-small">Voir le projet</a>
+                    </div>
+                </div>
+                
+                <!-- Projet ML 1 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image" style="background-image: url('assets/img/project-ml-1.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Machine Learning</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Prédiction de défauts de production</h3>
+                        <p>Modèle prédictif pour détecter les anomalies dans une chaîne de production industrielle.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Scikit-learn</span>
+                            <span class="tag">RandomForest</span>
+                        </div>
+                        <a href="#" class="btn btn-small">Voir le projet</a>
+                    </div>
+                </div>
+                
+                <!-- Projet Automation 1 -->
+                <div class="project-card" data-category="automation">
+                    <div class="project-image" style="background-image: url('assets/img/project-automation-1.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Automatisation</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Automatisation de rapports financiers</h3>
+                        <p>Workflow automatisé pour collecter, traiter et distribuer des rapports financiers mensuels.</p>
+                        <div class="project-tags">
+                            <span class="tag">Make (Integromat)</span>
+                            <span class="tag">Google Sheets</span>
+                            <span class="tag">Zapier</span>
+                        </div>
+                        <a href="#" class="btn btn-small">Voir le projet</a>
+                    </div>
+                </div>
+                
+                <!-- Projet Data Viz 2 -->
+                <div class="project-card" data-category="dataviz">
+                    <div class="project-image" style="background-image: url('assets/img/project-dataviz-2.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Data Visualization</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Visualisation de données médicales</h3>
+                        <p>Représentation visuelle des tendances d'admission hospitalière pour l'optimisation des ressources.</p>
+                        <div class="project-tags">
+                            <span class="tag">D3.js</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">SVG</span>
+                        </div>
+                        <a href="#" class="btn btn-small">Voir le projet</a>
+                    </div>
+                </div>
+                
+                <!-- Projet ML 2 -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image" style="background-image: url('assets/img/project-ml-2.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Machine Learning</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Analyse de sentiment client</h3>
+                        <p>Système de classification automatique des commentaires clients pour identifier la satisfaction.</p>
+                        <div class="project-tags">
+                            <span class="tag">NLP</span>
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">BERT</span>
+                        </div>
+                        <a href="#" class="btn btn-small">Voir le projet</a>
+                    </div>
+                </div>
+                
+                <!-- Projet Hackathon 3M -->
+                <div class="project-card" data-category="ml">
+                    <div class="project-image" style="background-image: url('assets/img/project-ml-1.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Hackathon IA</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Hackaton Des 3M → Deuxième Place 🥈</h3>
+                        <p>Solution d'hyperpersonnalisation de campagnes marketing pour Malt, combinant nettoyage de données, scoring de contacts et IA générative.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">MistralAI</span>
+                            <span class="tag">Make</span>
+                            <span class="tag">RAG</span>
+                        </div>
+                        <a href="https://sable-driver-0d1.notion.site/Hackaton-Des-3M-Deuxi-me-Place-1d454783cae080f78d6bccadfd05758d" class="btn btn-small">Voir le projet</a>
+                    </div>
+                </div>
+                
+                <!-- Projet Automation 2 -->
+                <div class="project-card" data-category="automation">
+                    <div class="project-image" style="background-image: url('assets/img/project-automation-2.jpg');">
+                        <div class="project-overlay">
+                            <span class="project-category">Automatisation</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Pipeline d'extraction de données web</h3>
+                        <p>Système automatisé de collecte et d'analyse de données provenant de multiples sources web.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">BeautifulSoup</span>
+                            <span class="tag">Airflow</span>
+                        </div>
+                        <a href="#" class="btn btn-small">Voir le projet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Portfolio Data</h3>
+                    <p>Spécialistes en data science, visualisation, machine learning et automatisation de processus.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Liens rapides</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                        <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projets</a></li>
+                        <li><a href="about.html"><i class="fas fa-users"></i> À propos</a></li>
+                        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:info@portfolio-data.com"><i class="fas fa-envelope"></i> info@portfolio-data.com</a></li>
+                        <li><a href="tel:+33612345678"><i class="fas fa-phone"></i> +33 6 12 34 56 78</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Paris, France</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p> 2025 Tarzs GNIMAGNON. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Configuration JSON intégrée pour éviter les problèmes CORS -->
+    <script id="config-data" type="application/json">
+    {
+      "general": {
+        "siteTitle": "Portfolio Data",
+        "siteSubtitle": "Projets & Réalisations",
+        "copyright": " 2025 Tarzs GNIMAGNON. Tous droits réservés.",
+        "footerText": "Spécialistes en data science, visualisation, machine learning et automatisation de processus."
+      }
+    }
+    </script>
+    
+    <script src="assets/js/config-loader.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script>
+        // Script pour le filtrage des projets
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Retirer la classe active de tous les boutons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Ajouter la classe active au bouton cliqué
+                    this.classList.add('active');
+                    
+                    // Obtenir la catégorie du filtre
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Afficher ou masquer les projets en fonction du filtre
+                    projectCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+{
+  "general": {
+    "siteTitle": "Portfolio Data",
+    "siteSubtitle": "Projets & Réalisations",
+    "copyright": " 2025 Tarzs GNIMAGNON. Tous droits réservés.",
+    "footerText": "Spécialistes en data science, visualisation et machine learning."
+  },
+  "header": {
+    "menuItems": [
+      {
+        "text": "Projets",
+        "link": "#projects",
+        "submenu": [
+          {
+            "text": "Tous les projets",
+            "link": "#all-projects",
+            "dataSection": "all"
+          },
+          {
+            "text": "Data Visualization",
+            "link": "#dataviz-projects",
+            "dataSection": "dataviz"
+          },
+          {
+            "text": "Machine Learning & IA",
+            "link": "#ml-projects",
+            "dataSection": "ml"
+          }
+
+        ]
+      },
+      {
+        "text": "À propos",
+        "link": "#about"
+      },
+      {
+        "text": "Contact",
+        "link": "#contact"
+      }
+    ]
+  },
+  "hero": {
+    "title": "Transformez vos <span>données</span> en <span>décisions</span> avec <span>Tarzs GNIMAGNON</span>",
+    "subtitle": "Expertise en Data Science et Visualisation de données",
+    "ctaPrimary": "Découvrir nos projets",
+    "ctaSecondary": "Contactez-nous"
+  },
+  "team": {
+    "title": "À propos de moi",
+    "description": "Data Analyst passionné par la valorisation des données, je combine une expertise technique en datavisualisation, automatisation (no-code/VBA) et machine learning avec une solide culture business acquise dans les secteurs de la publicité programmatique et du retail. Mon objectif : transformer les données en leviers de performance opérationnelle et stratégique. Curieux, rigoureux et orienté résultats, je suis à l'aise aussi bien dans l'analyse technique que dans l'accompagnement des équipes métier. Je suis également actif sur des projets innovants via des hackathons autour de l'IA générative, de l'automatisation et du prompt engineering.",
+    "story": "Avec plus de 7 ans d'expérience dans l'analyse de données, j'ai développé une expertise dans la transformation de données brutes en insights actionnables. Ma passion pour la data science m'a poussé à adopter une vision claire : rendre les données accessibles et compréhensibles pour tous les collaborateurs.",
+    "members": [
+      {
+        "name": "Tarzs GNIMAGNON",
+        "role": "Data Analyst & Data Scientist",
+        "bio": "Spécialiste en datavisualisation, automatisation (no-code) de processus et en machine learning, j'accompagne les entreprises dans la valorisation de leurs données afin de faciliter la prise de décision.",
+        "photo": "assets/img/team-1.jpg"
+      }
+    ],
+    "skills": [
+      {
+        "category": "Langages & Frameworks",
+        "icon": "fas fa-code",
+        "items": ["Python", "R", "SQL", "JavaScript", "TensorFlow", "PyTorch"]
+      },
+      {
+        "category": "Data Visualization",
+        "icon": "fas fa-chart-line",
+        "items": ["Tableau", "Power BI", "D3.js", "Matplotlib", "Plotly"]
+      },
+      {
+        "category": "Intelligence Artificielle",
+        "icon": "fas fa-robot",
+        "items": ["Machine Learning", "Deep Learning", "NLP", "Computer Vision"]
+      },
+      {
+        "category": "Automatisation",
+        "icon": "fas fa-cogs",
+        "items": ["Make (Integromat)", "Zapier", "Power Automate", "Airflow"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "description": "Vous avez un projet data ou une idée à explorer ? N'hésitez pas à nous contacter pour discuter de votre projet et explorer ensemble les possibilités.",
+    "email": "gnimagnontarzs@gmail.com",
+    "phone": "+33 7 76 01 98 51",
+    "address": "Paris, France",
+    "socialLinks": [
+      {
+        "platform": "linkedin",
+        "url": "#"
+      },
+      {
+        "platform": "github",
+        "url": "#"
+      },
+      {
+        "platform": "twitter",
+        "url": "#"
+      }
+    ]
+  }
+}
